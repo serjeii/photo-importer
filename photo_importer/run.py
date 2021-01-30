@@ -93,7 +93,7 @@ def main():
 
     status = imp.status()
     logging.info('status: %s' % str(status))
-    if status['move']['errors'] != 0 or status['rotate']['errors'] != 0:
+    if status['move']['errors'] != 0 or (int(cfg['main']['rotate']) and status['rotate']['errors'] != 0):
         print('Some errors found. Please check log file.')
 
 

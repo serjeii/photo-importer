@@ -160,11 +160,16 @@ class FileProp(object):
 
         ftime = self.__time(fullname, fname, tp)
 
-        if ftime:
-            out_name = ftime.strftime(
-                self.__config['main']['out_time_format'])
+        if int(self.__config['main']['rename']):
+            if ftime:
+                out_name = ftime.strftime(
+                    self.__config['main']['out_time_format'])
+            else:
+                out_name = None
         else:
-            out_name = None
+            out_name = fname
+
+        # logging.info('out_name: %s fname: %s' % (out_name, fname))
 
         if out_name:
             ok = fname[0:len(out_name)] == out_name

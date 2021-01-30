@@ -23,6 +23,8 @@ class Config(object):
             'file_ext_ignore': 'ini,zip,db',
             'remove_garbage': 1,
             'remove_empty_dirs': 1,
+            'rotate': 1,
+            'rename': 1,
             'move_mode': 1,
             'threads_count': 2,
             'umask': '0o000',
